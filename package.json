@@ -9,5 +9,24 @@
     "mysql2": "^2.2.5",
     "nodemon": "^2.0.12",
     "sequelize": "^6.6.5"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "techblog",
+  "description": "Tech blog website",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stranded-Helix/TechBlog.git"
+  },
+  "keywords": [],
+  "author": "Garrett Fite",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Stranded-Helix/TechBlog/issues"
+  },
+  "homepage": "https://github.com/Stranded-Helix/TechBlog#readme"
 }
