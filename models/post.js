@@ -36,3 +36,5 @@ Post.init (
         modelName: 'Post'
     }
 )
+
+module.exports = Post
