@@ -14,3 +14,23 @@ router.get('/', async (req, res) => {
         res.status(500).json(err);
     }
 })
+
+router.get('/signUp', (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect('/dashboard');
+        return;
+    } else {
+        res.render('signUp');
+    }
+})
+
+router.get('/login', (req, res) => {
+    if(req.session.loggedIn) {
+        res.redirect('/dashboard');
+        return;
+    } else {
+        res.render('login');
+    }
+})
+
+module.exports = router;

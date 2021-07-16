@@ -11,7 +11,8 @@
     "sequelize": "^6.6.5"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "watch": "nodemon server.js"
   },
   "name": "techblog",
   "description": "Tech blog website",
