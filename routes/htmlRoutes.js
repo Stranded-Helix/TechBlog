@@ -4,12 +4,11 @@ const { User, Post, Comment } = require('../models');
 //Homepage with all post, loggedin or loggedout
 router.get('/', async (req, res) => {
     try{
-        //TODO: check if we need to add a where claus
-        const postData = await Post.findAll();
+        const postData = await Post.findAll({include: User});
 
-        const postsFormatted = postData.map((post) => post.get({plain: true}));
-
-        res.render('homepage', postsFormatted);
+        const posts = postData.map((post) => post.get({plain: true}));
+        console.log(posts[0]);
+        res.render('homepage', {layout: 'main', posts, loggedIn: req.session.loggedIn});
     } catch (err) {
         res.status(500).json(err);
     }

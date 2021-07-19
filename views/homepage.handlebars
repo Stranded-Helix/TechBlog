@@ -1,8 +1,16 @@
 {{#each posts}}
-<div class="card">
-  <h5 href="/post/{{id}}"class="card-header">{{title}} |  {{post.User.username}} | {{format_date createdAt}}</h5>
-  <div class="card-body">
-    <p class="card-text">{{post.body}}</p>
+<div class="card text-dark m-1">
+  <div class="card-header d-flex justify-content-between">
+  <h5 href="/post/{{id}}">{{title}}</h5>
+  <h6 >{{User.username}} | {{format_date createdAt}}</h6>
   </div>
+  <div class="card-body">
+    <p class="card-text">{{body}}</p>
+  </div>
+  {{#if ../loggedIn}}
+  <div class="card-header">
+    <a href="/comment/{{id}}">Comment</a>
+  </div>
+  {{/if}}
 </div>
 {{/each}}

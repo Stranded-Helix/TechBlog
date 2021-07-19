@@ -1,0 +1,11 @@
+{{#each posts}}
+<div class="card m-1">
+  <div class="card-header d-flex justify-content-between">
+    <a href="/dashboard/edit-post/{{id}}" class="fw-bold">{{title}}</a>
+    <h6>{{format_date createdAt}}</h6>
+  </div>
+  <div class="card-body">
+    <p class="card-text">{{body}}</p>
+  </div>
+</div>
+{{/each}}
