@@ -5,7 +5,6 @@ const { Comment } = require('../../models');
 router.post('/', withAuth, async (req,res) => {
     if(req.session.loggedIn) {
     try {
-        console.log("trying to make new comment")
         const newComment = await Comment.create({
             ...req.body,
             user_id: req.session.userId,

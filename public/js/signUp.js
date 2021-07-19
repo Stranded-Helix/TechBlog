@@ -4,8 +4,6 @@ const signUpForm = async (event) => {
     const usernameData = document.querySelector('#inputUsername');
     const passwordData = document.querySelector('#inputPassword');
 
-    console.log(usernameData, passwordData);
-
     const response = await fetch('/api/user/create', {
         method: 'POST',
         body: JSON.stringify({

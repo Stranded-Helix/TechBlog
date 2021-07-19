@@ -7,7 +7,6 @@ router.get('/', async (req, res) => {
         const postData = await Post.findAll({include: User});
 
         const posts = postData.map((post) => post.get({plain: true}));
-        console.log(posts[0]);
         res.render('homepage', {layout: 'main', posts, loggedIn: req.session.loggedIn});
     } catch (err) {
         res.status(500).json(err);
@@ -46,8 +45,6 @@ router.get('/post/:id', async (req, res) => {
             },
             include: User
         })
-        console.log(postData);
-        console.log(commentData);
         if (postData) {
             const post = postData.get({plain: true})
             const comments = commentData ? commentData.map(x => x.get({plain: true})) : [];

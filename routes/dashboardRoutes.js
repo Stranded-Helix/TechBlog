@@ -11,10 +11,8 @@ router.get('/', withAuth, async (req, res) => {
             }
         })
         const posts = postData.map((post) => post.get({plain: true}));
-        console.log(posts[1]);
         res.render('userPost', {layout: 'dashboard', posts, loggedIn: req.session.loggedIn});
     } catch (err) {
-        console.log("Could not render dashboard");
         console.log(err);
         res.redirect('/')
     }

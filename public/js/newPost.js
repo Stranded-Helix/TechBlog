@@ -4,8 +4,6 @@ const postForm = async function(event){
     // Assigns user values from input fields
     const postTitleData = document.querySelector("#post-title")
     const postBodyData = document.querySelector("#post-body")
-    console.log(postTitleData)
-    console.log(postBodyData)
 
     // Sends data
     await fetch('/api/post', {
