@@ -1,11 +1,13 @@
 {{#each posts}}
 <div class="card m-1">
+  <a href="/dashboard/edit-post/{{id}}" class="no-anchor-style">
   <div class="card-header d-flex justify-content-between">
-    <a href="/dashboard/edit-post/{{id}}" class="fw-bold">{{title}}</a>
+    <h5 class="fw-bold">{{title}}</h5>
     <h6>{{format_date createdAt}}</h6>
   </div>
   <div class="card-body">
     <p class="card-text">{{body}}</p>
   </div>
+  </a>
 </div>
 {{/each}}

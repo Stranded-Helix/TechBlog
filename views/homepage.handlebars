@@ -1,16 +1,13 @@
 {{#each posts}}
 <div class="card text-dark m-1">
+  <a href="/post/{{id}}" class="no-anchor-style">
   <div class="card-header d-flex justify-content-between">
-  <h5 href="/post/{{id}}">{{title}}</h5>
+  <h5>{{title}}</h5>
   <h6 >{{User.username}} | {{format_date createdAt}}</h6>
   </div>
   <div class="card-body">
     <p class="card-text">{{body}}</p>
   </div>
-  {{#if ../loggedIn}}
-  <div class="card-header">
-    <a href="/comment/{{id}}">Comment</a>
-  </div>
-  {{/if}}
+  </a>
 </div>
 {{/each}}

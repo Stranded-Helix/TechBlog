@@ -36,16 +36,23 @@ router.get('/post/:id', async (req, res) => {
     try {
         const postData = await Post.findByPk(req.params.id, {
             include: [
-                User,
-                {
-                    model: Comment,
-                    include: [User]
-                }
+                User
             ]
         });
+
+        const commentData = await Comment.findAll({
+            where: {
+                post_id: req.params.id
+            },
+            include: User
+        })
+        console.log(postData);
+        console.log(commentData);
         if (postData) {
             const post = postData.get({plain: true})
-            res.render('viewPost', {post})
+            const comments = commentData ? commentData.map(x => x.get({plain: true})) : [];
+
+            res.render('viewPost', {post, comments, loggedIn: req.session.loggedIn});
         } else {
             res.status(404).end();
         }

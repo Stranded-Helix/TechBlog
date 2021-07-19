@@ -3,14 +3,19 @@ const withAuth = require('../../utils/auth');
 const { Comment } = require('../../models');
 
 router.post('/', withAuth, async (req,res) => {
+    if(req.session.loggedIn) {
     try {
+        console.log("trying to make new comment")
         const newComment = await Comment.create({
             ...req.body,
-            userId: req.session.userId,
+            user_id: req.session.userId,
         })
         res.json(newComment)
     }   catch (err) {
         res.status(500).json(err)
+    }}
+    else {
+        res.redirect('/login')
     }
 })
 
