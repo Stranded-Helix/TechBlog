@@ -1,6 +1,8 @@
 # Tech Blog
 ## Blogging website that allows login, post, comments with an auto logoff feature 
 
+![image](https://user-images.githubusercontent.com/36345799/126377512-07c4bd7c-ded9-408b-8db5-29bf09c71dcb.png)
+
 ## Table of Contents 
 [installation](#installation)
  
